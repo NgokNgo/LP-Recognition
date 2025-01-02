@@ -23,7 +23,7 @@ def compute_skew(src_img, center_thres):
     # xử lí ảnh để tìm đường thẳng
     img = cv2.medianBlur(src_img, 3)
     edges = cv2.Canny(img,  threshold1 = 30,  threshold2 = 100, apertureSize = 3, L2gradient = True)
-    lines = cv2.HoughLinesP(edges, 1, math.pi/180, 30, minLineLength=w / 3.0, maxLineGap=h/3.0)
+    lines = cv2.HoughLinesP(edges, 1, math.pi/180, 30, minLineLength=w / 1.5, maxLineGap=h/3.0)
     if lines is None:
         return 1
 
